@@ -5,7 +5,7 @@ clean:
 	rm -rf bin
 
 install:
-	sudo apxs -i -a -n atest2 bin/mod_atest2.so
+	sudo apxs -i -a -n angelscript bin/mod_angelscript.so
 
 reload:
 	sudo service apache2 restart

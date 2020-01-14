@@ -5,23 +5,7 @@
 #include <apache2/http_protocol.h>
 #include <apache2/http_request.h>
 
-class Foo
-{
-private:
-	request_rec* m_req;
-
-public:
-	Foo(request_rec* r)
-	{
-		m_req = r;
-		ap_rprintf(m_req, "It works from <b>C++</b>!");
-	}
-
-	void Thing()
-	{
-		ap_rprintf(m_req, "<br>The URL is: <code>%s</code>", m_req->filename);
-	}
-};
+#include <PageHandler.h>
 
 static int example_handler(request_rec* r)
 {
@@ -29,10 +13,11 @@ static int example_handler(request_rec* r)
 		return DECLINED;
 	}
 
-	ap_set_content_type(r, "text/html");
+	PageHandler ph;
+	ph.HandleRequest(r);
 
-	Foo f(r);
-	f.Thing();
+	//ap_set_content_type(r, "text/html");
+	//ap_rprintf(r, "aaa %d", 1);
 
 	return OK;
 }
@@ -42,7 +27,7 @@ static void register_hooks(apr_pool_t* pool)
 	ap_hook_handler(example_handler, NULL, NULL, APR_HOOK_LAST);
 }
 
-module AP_MODULE_DECLARE_DATA atest2_module =
+module AP_MODULE_DECLARE_DATA angelscript_module =
 {
 	STANDARD20_MODULE_STUFF,
 	NULL,
