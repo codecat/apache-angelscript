@@ -36,13 +36,8 @@ workspace "atest2"
 			path.join(DIR_ROOT, "src", "**.h"),
 		}
 
-		defines {
-			"LINUX",
-			"_REENTRANT",
-			"_GNU_SOURCE",
-		}
-
-		includedirs {
-			"/usr/include/apr-1.0",
-		}
+		-- Maybe I don't need?
+		--includedirs {
+		--	"/usr/include/apr-1.0",
+		--}
 
