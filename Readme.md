@@ -15,3 +15,5 @@ void main()
 # Development
 This project is a very early proof of concept right now. I don't know if I'm going to continue working on this, but I think it's a cool concept to explore more.
 
+A lot of things are still in the design stages as well, so you'll notice that the code is pretty ugly right now, considering it's a quick concept that I hacked up in a few hours.
+
