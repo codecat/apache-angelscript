@@ -14,12 +14,13 @@ static int example_handler(request_rec* r)
 	}
 
 	PageHandler ph;
-	ph.HandleRequest(r);
+	ph.RegisterEngine();
+	return ph.HandleRequest(r);
 
 	//ap_set_content_type(r, "text/html");
 	//ap_rprintf(r, "aaa %d", 1);
 
-	return OK;
+	//return OK;
 }
 
 static void register_hooks(apr_pool_t* pool)

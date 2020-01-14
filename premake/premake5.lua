@@ -1,5 +1,6 @@
 local DIR_ROOT = (path.getabsolute("..") .. "/")
 local DIR_ANGELSCRIPT = path.join(DIR_ROOT, "angelscript", "sdk", "angelscript")
+local DIR_ANGELSCRIPT_ADDONS = path.join(DIR_ROOT, "angelscript", "sdk", "add_on")
 
 workspace "angelscript"
 	location(path.join("projects", _ACTION))
@@ -82,6 +83,9 @@ workspace "angelscript"
 		files {
 			path.join(DIR_ROOT, "src", "**.cpp"),
 			path.join(DIR_ROOT, "src", "**.h"),
+
+			path.join(DIR_ANGELSCRIPT_ADDONS, "**.cpp"),
+			path.join(DIR_ANGELSCRIPT_ADDONS, "**.h"),
 		}
 
 		links {
@@ -90,7 +94,10 @@ workspace "angelscript"
 
 		includedirs {
 			path.join(DIR_ROOT, "src"),
+
 			path.join(DIR_ANGELSCRIPT, "include"),
+			DIR_ANGELSCRIPT_ADDONS,
+
 			"/usr/include/apr-1.0",
 		}
 

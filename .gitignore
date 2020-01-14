@@ -1,3 +1,7 @@
+# Builds
 bin/
 premake/projects/
+
+# Vim garbage
+.*.swp
 
