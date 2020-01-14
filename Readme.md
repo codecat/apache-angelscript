@@ -24,7 +24,7 @@ This currently only builds on Linux. To build this, you need to install `apache2
 
 1. Generate the makefiles necessary for building the module, using premake.
 2. Compile Angelscript and `mod_angelscript` and place them in the `bin` folder.
-3. Installs the module using [`apxs`](https://httpd.apache.org/docs/2.4/programs/apxs.html). This will run with sudo!
+3. Installs (and enables) the module using [`apxs`](https://httpd.apache.org/docs/2.4/programs/apxs.html). This will run with sudo!
 4. Restarts apache using `service apache2 restart`. This will of course also run with sudo!
 
 # Configuring
